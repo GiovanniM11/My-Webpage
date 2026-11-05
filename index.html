@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page metadata and links to the site's stylesheet. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govanni's Portfolio | Software Engineering Student</title>
+    <!-- A short summary that search engines may show in results. -->
+    <meta name="description" content="Explore Govanni's software engineering portfolio, featuring student projects and skills in Python, C++, JavaScript, C#, web development, and SQL.">
+    <!-- Open Graph metadata controls the page preview on social platforms. -->
+    <meta property="og:title" content="Govanni's Portfolio | Software Engineering Student">
+    <meta property="og:description" content="Explore Govanni's software engineering portfolio, featuring student projects and skills in Python, C++, JavaScript, C#, web development, and SQL.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Page title banner. -->
+    <header>
+        <h1>Govanni's Software Engineering Portfolio</h1>
+    </header>
+    <!-- Main navigation links and the mobile menu toggle button. -->
+    <nav id="mainNavigation" aria-label="Main navigation">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navLinks">
+            <li><a href="#aboutMe">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Main page content, organized into topic sections. -->
+    <main>
+        <!-- Personal introduction and university image. -->
+        <section id="aboutMe">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuE9DYXQkC8Wt-eZzcIDqmJBWke4p3KxE4c_oM59OVGA&amp;s=10" alt="Florida Gulf Coast University">
+            <h2>About Me</h2>
+            <p>My name is Govanni and I'm a student here at FGCU. I'm in my third year 
+                of college and I am currently persuing a degree in Software Engineering. 
+                In my free time i obviously code and do projects but i also like to workout, 
+                hangout with friends, and wrestle.
+             </p>    
+        </section>
+        <!-- Examples of completed projects. -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on:</p>
+            <ul>
+                <li>Canvas Grading System: An application that replicates Cnvas grading system for one student.</li>
+                <li>Student-Management: C# code that allows user to manage students and their grades in the class</li>
+                <li>Golf Ball Robot: I created the and designed the chip that goes into this robot.</li>
+            </ul>
+
+        </section>
+        <!-- Programming and development skills. -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>Here are some of the skills I've developed:</p>
+            <ul>
+                <li>Programming languages: Python, C++, C#</li>
+                <li>Web development: HTML, CSS, JavaScript</li>
+                <li>Database management: SQL</li>
+            </ul>
+        </section>
+        <!-- Contact fields, required validation messages, and submit button. -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contactForm" action="#" method="post" novalidate>
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" aria-describedby="contact-name-error" required>
+                <span class="field-error" id="contact-name-error" aria-live="polite"></span>
+
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" aria-describedby="contact-email-error" required>
+                <span class="field-error" id="contact-email-error" aria-live="polite"></span>
+
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="5" aria-describedby="contact-message-error" required></textarea>
+                <span class="field-error" id="contact-message-error" aria-live="polite"></span>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Copyright footer. -->
+    <footer>
+        <p>&copy; 2026 My Web Page. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal that displays an image at a larger size. -->
+    <dialog class="image-modal" id="imageModal" aria-label="Enlarged image">
+        <button type="button" id="closeImageModal" aria-label="Close enlarged image" autofocus>Close</button>
+        <img id="imageModalContent" alt="">
+    </dialog>
+
+    <!-- Load menu, image modal, and contact validation behavior. -->
+    <script src="script.js"></script>
+
+</body>
+</html>

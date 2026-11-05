@@ -1,0 +1,335 @@
+/* Use predictable sizing and set the page's base colors and typography. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f7f3;
+    color: #1f2933;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* Green banner and centered title. */
+header {
+    padding: 2rem 1rem;
+    background: #14532d;
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Arrange navigation links in a centered row that can wrap on small screens. */
+nav {
+    background: #fff;
+    border-bottom: 2px solid #c8d8ca;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.4rem 0.25rem;
+    color: #14532d;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+nav a:hover {
+    color: #0b351b;
+}
+
+/* Keep the content centered and limit line length on wide screens. */
+main {
+    width: min(100% - 2rem, 55rem);
+    margin: 2rem auto;
+}
+
+/* Give each section a white card with a green accent. */
+section {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #c8d8ca;
+    border-left: 0.4rem solid #267443;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgb(20 83 45 / 8%);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #14532d;
+    line-height: 1.3;
+}
+
+/* Stack and center the About Me content with readable text spacing. */
+#aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+#aboutMe h2 {
+    margin: 0;
+    text-align: center;
+}
+
+#aboutMe p {
+    max-width: 42rem;
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+#aboutMe img {
+    display: block;
+    width: min(100%, 24rem);
+    margin: 0;
+}
+
+/* Scale images down to fit their container without changing proportions. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img[role="button"] {
+    cursor: zoom-in;
+}
+
+.image-modal[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    width: min(90vw, 60rem);
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 1rem;
+    border: 2px solid #14532d;
+    border-radius: 0.5rem;
+}
+
+.image-modal::backdrop {
+    background: rgb(0 0 0 / 75%);
+}
+
+.image-modal img {
+    align-self: center;
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+.image-modal button {
+    padding: 0.4rem 0.75rem;
+    border: 2px solid #14532d;
+    border-radius: 0.25rem;
+    background: #14532d;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Stack contact fields vertically with consistent spacing. */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 32rem;
+}
+
+/* Make form controls readable and consistent with the page typography. */
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #52645a;
+    border-radius: 0.25rem;
+    background: #fff;
+    color: #1f2933;
+    font: inherit;
+}
+
+form input[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+    border: 2px solid #a32121;
+}
+
+.field-error {
+    min-height: 0;
+    color: #8b1e1e;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.field-error:not(:empty) {
+    min-height: 1.4em;
+}
+
+/* Style the submit button and provide a darker hover state. */
+form button {
+    align-self: flex-start;
+    padding: 0.6rem 1rem;
+    border: 2px solid #14532d;
+    border-radius: 0.25rem;
+    background: #14532d;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0b351b;
+}
+
+footer {
+    padding: 1rem;
+    background: #14532d;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Highlight keyboard focus so interactive controls are easy to locate. */
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+img[role="button"]:focus-visible {
+    outline: 3px solid #a34a00;
+    outline-offset: 3px;
+}
+
+/* Phone layout: reduce spacing and text size for narrow screens. */
+@media (max-width: 600px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    nav.is-open ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.25rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+        border: 2px solid #14532d;
+        border-radius: 0.25rem;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #14532d;
+    }
+
+    main {
+        width: calc(100% - 1.25rem);
+        margin: 1rem auto;
+    }
+
+    section,
+    #aboutMe {
+        padding: 1rem;
+    }
+
+    #aboutMe p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    #aboutMe img {
+        width: min(100%, 20rem);
+    }
+
+    form button {
+        align-self: stretch;
+    }
+}
+
+/* Tablet layout: adjust page width and section spacing. */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        width: min(100% - 3rem, 55rem);
+        margin: 1.5rem auto;
+    }
+
+    section {
+        padding: 1.75rem;
+    }
+
+    #aboutMe {
+        padding: 2rem;
+    }
+}
+
+/* Laptop layout: allow a wider content area and roomier About section. */
+@media (min-width: 1025px) {
+    main {
+        width: min(100% - 4rem, 68rem);
+        margin: 2.5rem auto;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    #aboutMe {
+        gap: 1.25rem;
+        padding: 2.5rem;
+    }
+
+    #aboutMe p {
+        font-size: 1.2rem;
+    }
+
+    #aboutMe img {
+        width: min(100%, 28rem);
+    }
+}
